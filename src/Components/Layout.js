@@ -17,7 +17,7 @@ const Layout = () => {
                     <Link className='list' to = "/Skills">Skills</Link>
                 </li>
                 <li>
-                    <Link className='list' to = "/Exp">Experience</Link>
+                    <Link className='list' to = "/Experience">Experience</Link>
                 </li>
                 <li>
                     <Link className='list' to = "/ShowCV">ShowCV</Link>

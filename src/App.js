@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import PersonalDetails from './Components/PersonalDetails'
 import Education from './Components/Education'
 import Skills from './Components/Skills'
-import Exp from './Components/Exp'
+import Experience from './Components/Experience'
 import Home from './Components/Home'
 import Layout from './Components/Layout'
 import Nopath from './Components/Nopath'
@@ -11,6 +11,14 @@ import './App.css';
 import ShowCV from './Components/ShowCV'
 
 export const App = () => {
+
+  const [resumeData, setResumeData] = useState({
+    experience: ''
+  })
+
+  const handleResumeUpdate = (newData) => {
+    setResumeData({...resumeData, ...newData});
+  }
   return (
     <div>
       <BrowserRouter>
@@ -20,9 +28,9 @@ export const App = () => {
           <Route path = '/PersonalDetails' element = { <PersonalDetails /> } />
           <Route path = "/Education" element = { <Education /> } />
           <Route path = "/Skills" element = { <Skills /> } />
-          <Route path = "/Exp" element = { <Exp /> } />
+          <Route path = "/Experience" element = { <Experience handleResumeUpdate = { handleResumeUpdate } /> } />
           <Route path = '*' element = { <Nopath />} />
-          <Route path = '/ShowCV' element = { <ShowCV PersonalDetails = { PersonalDetails }/>} />
+          <Route path = '/ShowCV' element = { <ShowCV resumeData = { resumeData } />} />
         </Routes>
       </BrowserRouter>
     </div>
