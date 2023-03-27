@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-const PersonalDetails = () => {
+const PersonalDetails = ( { handleResumeUpdate } ) => {
   const[name, setName] = useState("");
   const[age, setAge] = useState("");
   const[email, setEmail] = useState("");
-    
+  
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleResumeUpdate( { name, age, email } );
+    navigate('/Education');
+
   };
 
   return (
@@ -31,10 +35,11 @@ const PersonalDetails = () => {
         placeholder='Your email here'
         value={email} 
         onChange={(e) => setEmail(e.target.value)}/>
-        <Link 
-        type='submit'
-        className='btn btn-primary' 
-        to = "/ShowCV">Next</Link>
+        <button 
+          type='submit'
+          className='btn btn-primary'>
+          Next
+        </button>
     </form>
   )
 }

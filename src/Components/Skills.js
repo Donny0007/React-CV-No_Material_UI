@@ -1,11 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Skills = () => {
+const Skills = ( { handleResumeUpdate } ) => {
+
+  const[skills, setSkills] = useState('');
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleResumeUpdate( { skills });
+    navigate('/Experience');
+  }
   return (
     <div className='jumbotron'>
-        <textarea className= "form-control" placeholder='Your skills here'/>
-        <Link to = "/Exp" className='btn btn-primary'>Next</Link>
+      <form onSubmit={ handleSubmit }>
+        <textarea 
+          className= "form-control" 
+          placeholder='Your skills here' 
+          value={skills} 
+          onChange = { (e) => { setSkills(e.target.value) } }
+        />
+        <button 
+          className='btn btn-primary'
+          type='submit'>
+          Next
+        </button>
+      </form>
     </div>
   )
 }

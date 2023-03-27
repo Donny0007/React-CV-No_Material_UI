@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Experience = ({ handleResumeUpdate }) => {
   const[experience, setExperience] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = (event) =>{
     event.preventDefault();
     handleResumeUpdate( { experience });
+    navigate('/ShowCV');
   }
   return (
     <div className='jumbotron'>
@@ -17,15 +18,13 @@ const Experience = ({ handleResumeUpdate }) => {
         placeholder='Your experience here' 
         value={ experience } 
         onChange = { (e) => setExperience(e.target.value) }/>
-        <button type='submit' className=' btn btn-secondary'>Save and Continue</button>
-      </form>
-          <Link 
-          to= "/ShowCV"
-          className='btn btn-primary' 
+        <button
+          className='btn btn-primary'
           type='submit'
-        >
+          >
           Next
-        </Link>        
+        </button>    
+      </form>    
     </div>
   )
 }

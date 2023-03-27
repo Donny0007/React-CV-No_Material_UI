@@ -53,3 +53,7 @@ body{
 input[placeholder]{
   font-family: 'Courier New', Courier, monospace;
 }
+
+.container{
+  background-color: #fff;
+}

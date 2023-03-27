@@ -25,9 +25,9 @@ export const App = () => {
       <Layout /><br /><br/>
         <Routes>
           <Route index element = { <Home /> } /> 
-          <Route path = '/PersonalDetails' element = { <PersonalDetails /> } />
-          <Route path = "/Education" element = { <Education /> } />
-          <Route path = "/Skills" element = { <Skills /> } />
+          <Route path = '/PersonalDetails' element = { <PersonalDetails handleResumeUpdate = { handleResumeUpdate } /> } />
+          <Route path = "/Education" element = { <Education handleResumeUpdate = { handleResumeUpdate } /> } />
+          <Route path = "/Skills" element = { <Skills handleResumeUpdate={ handleResumeUpdate }/> } />
           <Route path = "/Experience" element = { <Experience handleResumeUpdate = { handleResumeUpdate } /> } />
           <Route path = '*' element = { <Nopath />} />
           <Route path = '/ShowCV' element = { <ShowCV resumeData = { resumeData } />} />
