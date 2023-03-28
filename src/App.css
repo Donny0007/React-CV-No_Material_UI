@@ -10,14 +10,25 @@ li{
   padding: 14px 16px;
   text-decoration: none;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
   
+}
+
+li :link{
+  text-decoration: none;
+  color: green;
 }
 
 li :hover{
   text-decoration: none;
   list-style-type: none;
-  color: #111;
-  background-color: #E0A96D;
+  color: #fff;
+  background-color: #68889E;
+}
+
+li :active{
+  text-decoration: none;
+  color: #68889E;
 }
 
 ul{
@@ -33,21 +44,19 @@ body{
   background-color: #E0A96D;
 }
 
-.jumbotron{
+legend{
   background-color: #DDC3A5;
-  padding-left: 600px;
   margin: 5px;
 }
 
 .btn{
-  background-color: #E0A96D;
-  color: #111;
-  margin-left: 115px;
+  background-color: #000;
+  color: #fff;
 }
 
 .form-control{
-  width: 30%;
   margin: 10px;
+  width: 200%;
 }
 
 input[placeholder]{
@@ -56,4 +65,53 @@ input[placeholder]{
 
 .container{
   background-color: #fff;
+  text-align: center;
+}
+
+h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+form{
+  border: 1px solid black;
+  padding: 10px;
+  margin-right: 100px;
+  justify-content: center;
+  display: flex;
+}
+
+.personal{
+  padding: 15px;
+  border: solid #000 1px;
+  text-align: right;
+}
+
+.container_cv{
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.edu{
+  border: solid #000 1px;
+}
+
+.skills{
+  border: solid #000 1px;
+}
+
+.experience{
+  border: solid #111 1px;
+}
+
+.header_cv{
+  font-size: 22px;
+  font-weight: 200;
+}
+
+h4{
+  margin-top: 10px;
 }

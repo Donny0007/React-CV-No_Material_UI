@@ -9,6 +9,7 @@ import Layout from './Components/Layout'
 import Nopath from './Components/Nopath'
 import './App.css';
 import ShowCV from './Components/ShowCV'
+import { Objective } from './Components/Objective'
 
 export const App = () => {
 
@@ -26,6 +27,7 @@ export const App = () => {
         <Routes>
           <Route index element = { <Home /> } /> 
           <Route path = '/PersonalDetails' element = { <PersonalDetails handleResumeUpdate = { handleResumeUpdate } /> } />
+          <Route path = "/Objective" element = { <Objective handleResumeUpdate = { handleResumeUpdate } /> } />
           <Route path = "/Education" element = { <Education handleResumeUpdate = { handleResumeUpdate } /> } />
           <Route path = "/Skills" element = { <Skills handleResumeUpdate={ handleResumeUpdate }/> } />
           <Route path = "/Experience" element = { <Experience handleResumeUpdate = { handleResumeUpdate } /> } />

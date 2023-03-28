@@ -12,11 +12,13 @@ const Skills = ( { handleResumeUpdate } ) => {
     navigate('/Experience');
   }
   return (
-    <div className='jumbotron'>
+    <div className='container'>
       <form onSubmit={ handleSubmit }>
+        <fieldset>
+          <legend>Skills</legend>
         <textarea 
           className= "form-control" 
-          placeholder='Your skills here' 
+          placeholder='Add Your Skills Here' 
           value={skills} 
           onChange = { (e) => { setSkills(e.target.value) } }
         />
@@ -25,6 +27,7 @@ const Skills = ( { handleResumeUpdate } ) => {
           type='submit'>
           Next
         </button>
+        </fieldset>
       </form>
     </div>
   )
